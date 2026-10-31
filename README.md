@@ -309,28 +309,25 @@ backend/tests/test_metrics.py .....               PASSED
 
 ### Frontend Deployment on Vercel
 
-1. Push this repository to GitHub.
-2. Sign in to [Vercel](https://vercel.com) and click **Add New Project**.
-3. Select your repository and set the **Root Directory** to `frontend`.
+1. Pushed the repository to GitHub.
+2. Signed in to [Vercel](https://vercel.com) and **Add New Project**.
+3. Selected the repository and set the **Root Directory** to `frontend`.
 4. Under **Environment Variables**, set:
    ```
-   VITE_API_BASE_URL=https://your-backend-service.onrender.com
+   VITE_API_BASE_URL=(Obtained the URl from Render)
    ```
 5. Click **Deploy**. `frontend/vercel.json` ensures client-side routing rewrites work out of the box.
 
-### Backend Deployment on Heroku / Render / Railway
+### Backend Deployment on Render
 
 1. **Render / Railway**:
    - Create a new **Web Service** from the same repo.
    - Set **Root Directory** to `backend`.
    - Set **Build Command**: `pip install -r requirements.txt`
    - Set **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-2. **Heroku**:
-   - Use the `backend/Dockerfile` or add a `Procfile`:
-     ```
-     web: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-     ```
-   - Deploy using the Heroku CLI or GitHub integration.
+
+Current Deployed Links: Frontend: https://kdwiadnsca-n8st.vercel.app/
+Current Deployed Links: Backend: https://kdwiadnsca.onrender.com
 
 ---
 
